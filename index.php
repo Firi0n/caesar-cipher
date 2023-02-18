@@ -15,7 +15,16 @@
         $text = str_split($_POST["text"]);
         $key = $_POST["key"];
         for($i = 0; $i < count($text); $i++){
-            $text[$i] = chr(ord($text[$i]) + ($isEncode ? $key : -$key));
+            //$text[$i] = chr(ord($text[$i]) + ($isEncode ? $key : -$key));
+            if($isEncode){
+                $text[$i] = chr((ord($text[$i]) + $key)%128);
+            }else{
+                $text[$i] = ord($text[$i]) - $key;
+                if($text[$i] < 0){
+                    $text[$i] = 128 + $text[$i];
+                }
+                $text[$i] = chr($text[$i]);
+            }
         }
         $text = implode($text);
     }
