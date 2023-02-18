@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Variables */
+:root {
+    --prymary-color: #011627;
+    --secondary-color: #F7F0F5;
+    --tertiary-color: #F7F0F532;
+}
+/* General */
+html {
+    scroll-behavior: smooth;
+    font-size: 1.2vw;
+}
+/* Body */
+body {
+    background-color: var(--prymary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondary-color);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+/* Title */
+h1 {
+    font-size: 3rem;
+    letter-spacing: 0.4rem;
+}
+/* Content */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Input */
+input,
+select,
+textarea {
+    margin: 2vh 0;
+    padding: 0.3rem;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+    background-color: var(--prymary-color);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    text-align: justify;
+}
+
+input[type="text"] {
+    width: 45vw;
+}
+
+textarea,
+input[type="submit"] {
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+input[type="submit"] {
+    letter-spacing: 0.2rem;
+}
+
+textarea {
+    height: 30vh;
+    width: 45vw;
+    resize: none;
+    /*Scrollbar textarea firefox*/
+    scrollbar-color: var(--secondary-color) var(--tertiary-color);
+    scrollbar-track-color: var(--prymary-color);
+    scrollbar-arrow-color: var(--secondary-color);
+}
+
+input:hover,
+textarea:hover {
+    background-color: var(--tertiary-color);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    background-color: var(--tertiary-color);
+}
+
+/* textarea scrollbar */
+textarea::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+
+}
+
+/* thumb textarea scrollbar */
+textarea::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* textarea scrollbar */
+textarea::-webkit-scrollbar-track {
+    background: #00000000;
+}
+
+/* button textarea scrollbar */
+textarea::-webkit-scrollbar-button {
+    background-color: #00000000;
+    background-repeat: no-repeat;
+    width: 1px;
+    height: 5px;
+}
+
+/* textarea scrollbar on hover */
+textarea::-webkit-scrollbar-track:hover {
+    background: var(--tertiary-color);
+}
+
+/* media queries */
+@media (max-width: 1024px) {
+    html{
+        font-size: 1.6vw;
+    }
+    textarea, input[type="text"] {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 800px) {
+    html{
+        font-size: 2.2vw;
+    }
+    textarea, input[type="text"] {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 500px) {
+    html{
+        font-size: 2.6vw;
+    }
+    textarea, input[type="text"] {
+        width: 80vw;
+    }
+}
