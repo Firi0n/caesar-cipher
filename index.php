@@ -9,23 +9,35 @@
 </head>
 <body>
     <?php
+    //Initialize variables
     $text = "";
+    //Check if the form has been submitted
     if(isset($_POST["type"]) && isset($_POST["text"]) && isset($_POST["key"])){
+        //Check if the operation is encode or decode
         $isEncode = $_POST["type"] == "encode";
+        //Split the text into an array of characters
         $text = str_split($_POST["text"]);
+        //Get the key
         $key = $_POST["key"];
+        //Loop through the array of characters
         for($i = 0; $i < count($text); $i++){
-            //$text[$i] = chr(ord($text[$i]) + ($isEncode ? $key : -$key));
+            //If the operation is encode, add the key to the character's ASCII code
             if($isEncode){
+                //If the character's ASCII code is greater than 128, then divide it by 128 and get the remainder
                 $text[$i] = chr((ord($text[$i]) + $key)%128);
+            //If the operation is decode, subtract the key from the character's ASCII code
             }else{
+                //Subtract the key from the character's ASCII code
                 $text[$i] = ord($text[$i]) - $key;
+                //If the character's ASCII code is less than 0, then add 128 to it
                 if($text[$i] < 0){
                     $text[$i] = 128 + $text[$i];
                 }
+                //Convert the ASCII code to a character
                 $text[$i] = chr($text[$i]);
             }
         }
+        //Join the array of characters into a string
         $text = implode($text);
     }
     ?>
