@@ -48,6 +48,10 @@ textarea {
     text-align: justify;
 }
 
+select {
+    width: 9vw;
+}
+
 input[type="text"] {
     width: 45vw;
 }
@@ -124,6 +128,9 @@ textarea::-webkit-scrollbar-track:hover {
     textarea, input[type="text"] {
         width: 50vw;
     }
+    select{
+        width: 12vw;
+    }
 }
 
 @media (max-width: 800px) {
@@ -133,6 +140,9 @@ textarea::-webkit-scrollbar-track:hover {
     textarea, input[type="text"] {
         width: 60vw;
     }
+    select{
+        width: 16vw;
+    }
 }
 
 @media (max-width: 500px) {
@@ -141,5 +151,8 @@ textarea::-webkit-scrollbar-track:hover {
     }
     textarea, input[type="text"] {
         width: 80vw;
+    }
+    select{
+        width: 20vw;
     }
 }
